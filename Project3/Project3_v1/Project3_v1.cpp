@@ -98,9 +98,9 @@ BOOL CALLBACK DlgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		switch (wParam)
 		{
 		case SC_CLOSE:
-			/*DeleteObject(hGlobalBitmap);
+			DeleteObject(hGlobalBitmap);
 			CloseHandle(ghSemaphore);
-			CloseHandle(ghMutex);*/
+			CloseHandle(ghMutex);
 			EndDialog(hWnd, 0);
 			return TRUE;
 		}
