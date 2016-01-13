@@ -24,6 +24,7 @@ void LineThread(LINETHREADINFO* info);	// thread control each line
 HINSTANCE hInst;						// instance
 HBITMAP hGlobalBitmap;					// bitmap background
 int ListBin[TOTAL + 10];				// list bin on processing
+int Bin[3];								// 3 bins for drawing purpose
 int Remaining;							// number of bin not process
 int Index;								// index of list bin
 HANDLE ghMutex, ghSemaphore;			// global sync variables
@@ -147,6 +148,9 @@ void PaintThread(HWND hWnd)
 	hC1 = GetDlgItem(hWnd, IDC_STATIC_COUNT1);
 	hC2 = GetDlgItem(hWnd, IDC_STATIC_COUNT2);
 	hC3 = GetDlgItem(hWnd, IDC_STATIC_COUNT3);
+	hBin1 = GetDlgItem(hWnd, IDC_STATIC_BIN1);
+	hBin2 = GetDlgItem(hWnd, IDC_STATIC_BIN2);
+	hBin3 = GetDlgItem(hWnd, IDC_STATIC_BIN3);
 
 	HWND hTotal, hRemaining;
 	hTotal = GetDlgItem(hWnd, IDC_STATIC_TOTAL);
@@ -184,6 +188,9 @@ void PaintThread(HWND hWnd)
 		InvalidateRect(hC1, NULL, TRUE);
 		InvalidateRect(hC2, NULL, TRUE);
 		InvalidateRect(hC3, NULL, TRUE);
+		InvalidateRect(hBin1, NULL, TRUE);
+		InvalidateRect(hBin2, NULL, TRUE);
+		InvalidateRect(hBin3, NULL, TRUE);
 		InvalidateRect(hTotal, NULL, TRUE);
 		InvalidateRect(hRemaining, NULL, TRUE);
 
@@ -207,6 +214,10 @@ void PaintThread(HWND hWnd)
 			DrawBin(hST[i], color, ListBin[Index + i]);
 		}
 
+		DrawBin(hBin1, red, Bin[0]);
+		DrawBin(hBin2, blue, Bin[1]);
+		DrawBin(hBin3, pink, Bin[2]);
+
 		Sleep(200);
 	}
 }
@@ -216,6 +227,9 @@ void OnInitDialog(HWND hWnd)
 	// init value
 	Remaining = TOTAL;
 	Index = TOTAL + 5;
+
+	// Bin = 0
+	memset(Bin, 0, sizeof(int)* LINE);
 
 	// LineCount = 0
 	memset(LineCount, 0, sizeof(int)* LINE);
@@ -275,7 +289,7 @@ void LineThread(LINETHREADINFO* info)
 
 		LineTurn = info->LineNumber;
 
-		Sleep(SLEEP);
+		Sleep(SLEEP / 2);
 
 		if (ListBin[Index + 4] == info->LineNumber)
 		{
@@ -283,9 +297,17 @@ void LineThread(LINETHREADINFO* info)
 			//Index--;
 			LineCount[info->LineNumber - 1]++;
 			ListBin[Index + 4] = 0;
+			Bin[info->LineNumber - 1] = info->LineNumber;
+			Sleep(SLEEP / 2);
+			Bin[info->LineNumber - 1] = 0;
 		}
 		else if (ListBin[Index + 4] == 0)
+		{
 			Index--;
+			Sleep(SLEEP / 2);
+		}
+		else
+			Sleep(SLEEP / 2);
 
 		ReleaseMutex(ghMutex);
 	}
