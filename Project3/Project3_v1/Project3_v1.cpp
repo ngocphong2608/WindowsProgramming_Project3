@@ -31,8 +31,6 @@ HANDLE ghMutex, ghSemaphore;			// global sync variables
 int LineCount[LINE];					// store cout value of each line
 int LineTurn;							// value = {1, 2, 3}, indcate which line on processing
 
-
-
 int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	_In_opt_ HINSTANCE hPrevInstance,
 	_In_ LPTSTR    lpCmdLine,
@@ -100,6 +98,9 @@ BOOL CALLBACK DlgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		switch (wParam)
 		{
 		case SC_CLOSE:
+			/*DeleteObject(hGlobalBitmap);
+			CloseHandle(ghSemaphore);
+			CloseHandle(ghMutex);*/
 			EndDialog(hWnd, 0);
 			return TRUE;
 		}
@@ -160,8 +161,6 @@ void PaintThread(HWND hWnd)
 	// blue RGB(63, 72, 204)
 	// pink = RGB(255, 174, 201)
 	COLORREF red = RGB(237, 28, 36), blue = RGB(63, 72, 204), pink = RGB(255, 174, 201), black = RGB(0, 0, 0);
-
-	
 
 	while (TRUE)
 	{
@@ -240,7 +239,6 @@ void OnInitDialog(HWND hWnd)
 	for (int i = 5; i < TOTAL + 5; i++)
 	{
 		ListBin[i] = rand() % 3 + 1;
-		std::printf("%d ", ListBin[i]);
 	}
 
 	// sync variables
@@ -250,7 +248,7 @@ void OnInitDialog(HWND hWnd)
 	// background
 	hGlobalBitmap = (HBITMAP)LoadImage(hInst, L"demo.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
 
-	// thread update paiting
+	// update paiting thread
 	CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)PaintThread, hWnd, NULL, NULL);
 
 	// create 3 thread associate with 3 line
