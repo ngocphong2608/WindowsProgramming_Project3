@@ -1,17 +1,20 @@
-﻿Build started 13/01/2016 8:23:40 CH.
-     1>Project "C:\Users\ThanhPhong\Documents\GitHub\WindowsProgramming_Project3\Project3\Project3_v1\DemoDialog2.vcxproj" on node 2 (Build target(s)).
+﻿Build started 13/01/2016 7:53:49 CH.
+     1>Project "C:\Users\ThanhPhong\Dropbox\Temporary Study\Windows Programming\Project 3\Project3\Project3_v1\DemoDialog2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Project3_v1.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Project3_v1.cpp
          Project3_v1.cpp
-     1>c:\users\thanhphong\documents\github\windowsprogramming_project3\project3\project3_v1\project3_v1.cpp(66): warning C4060: switch statement contains no 'case' or 'default' labels
-     1>c:\users\thanhphong\documents\github\windowsprogramming_project3\project3\project3_v1\project3_v1.cpp(233): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\thanhphong\dropbox\temporary study\windows programming\project 3\project3\project3_v1\project3_v1.cpp(67): warning C4060: switch statement contains no 'case' or 'default' labels
+     1>c:\users\thanhphong\dropbox\temporary study\windows programming\project 3\project3\project3_v1\project3_v1.cpp(143): warning C4101: 'hBin1' : unreferenced local variable
+     1>c:\users\thanhphong\dropbox\temporary study\windows programming\project 3\project3\project3_v1\project3_v1.cpp(143): warning C4101: 'hBin2' : unreferenced local variable
+     1>c:\users\thanhphong\dropbox\temporary study\windows programming\project 3\project3\project3_v1\project3_v1.cpp(143): warning C4101: 'hBin3' : unreferenced local variable
+     1>c:\users\thanhphong\dropbox\temporary study\windows programming\project 3\project3\project3_v1\project3_v1.cpp(224): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ThanhPhong\Documents\GitHub\WindowsProgramming_Project3\Project3\Debug\Project3_v1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ThanhPhong\Documents\GitHub\WindowsProgramming_Project3\Project3\Debug\Project3_v1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ThanhPhong\Documents\GitHub\WindowsProgramming_Project3\Project3\Debug\Project3_v1.lib" /MACHINE:X86 Debug\DemoDialog2.res
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ThanhPhong\Dropbox\Temporary Study\Windows Programming\Project 3\Project3\Debug\Project3_v1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ThanhPhong\Dropbox\Temporary Study\Windows Programming\Project 3\Project3\Debug\Project3_v1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ThanhPhong\Dropbox\Temporary Study\Windows Programming\Project 3\Project3\Debug\Project3_v1.lib" /MACHINE:X86 Debug\DemoDialog2.res
          Debug\Project3_v1.obj
          Debug\stdafx.obj
-         DemoDialog2.vcxproj -> C:\Users\ThanhPhong\Documents\GitHub\WindowsProgramming_Project3\Project3\Debug\Project3_v1.exe
-     1>Done Building Project "C:\Users\ThanhPhong\Documents\GitHub\WindowsProgramming_Project3\Project3\Project3_v1\DemoDialog2.vcxproj" (Build target(s)).
+         DemoDialog2.vcxproj -> C:\Users\ThanhPhong\Dropbox\Temporary Study\Windows Programming\Project 3\Project3\Debug\Project3_v1.exe
+     1>Done Building Project "C:\Users\ThanhPhong\Dropbox\Temporary Study\Windows Programming\Project 3\Project3\Project3_v1\DemoDialog2.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.91
+Time Elapsed 00:00:00.81
